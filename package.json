@@ -1,0 +1,51 @@
+{
+  "name": "vite-ts-library-template",
+  "version": "0.0.1",
+  "type": "module",
+  "main": "dist/index.umd.js",
+  "types": "dist/index.d.ts",
+  "module": "dist/index.es.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "vite build",
+    "watch": "vite build --watch",
+    "lint": "yarn lint-eslint",
+    "lint-eslint": "eslint . --ext ts --report-unused-disable-directives --max-warnings 0",
+    "commit": "cz",
+    "commit:amend": "git commit --amend --no-edit",
+    "push:force": "git push origin --force",
+    "prepare": "node ./scripts/prepare.cjs"
+  },
+  "lint-staged": {
+    "*.{ts,js}": [
+      "eslint --config .eslintrc.cjs"
+    ],
+    "*.{ts,js,json,yml,md}": [
+      "prettier --write ."
+    ]
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@commitlint/cli": "^18.2.0",
+    "@commitlint/config-conventional": "^18.1.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "commitizen": "^4.3.0",
+    "eslint": "^8.45.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-import": "^2.29.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.0.2",
+    "meow": "^9.0.0",
+    "prettier": "^3.0.3",
+    "terser": "^5.22.0",
+    "typescript": "^5.0.2",
+    "vite": "^5.0.11",
+    "vite-plugin-checker": "^0.6.4",
+    "vite-plugin-dts": "^3.6.4"
+  }
+}
